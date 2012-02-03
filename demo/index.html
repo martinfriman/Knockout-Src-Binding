@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Knockout Src Binding Demo</title>
+</head>
+<body>
+
+<div>
+	
+	<p>Select image: <select data-bind="options: images, value: imgurl"></select></p>
+ 
+	<p><img data-bind="src: imgurl" /></p>
+	
+</div>
+
+<script src="https://raw.github.com/SteveSanderson/knockout/master/build/output/knockout-latest.js"></script>
+<script src="../src/ko.srcbinding.js"></script>
+<script>
+
+	var vm = {
+		images : ko.observableArray(['image-1.jpg', 'image-2.jpg', 'image-3.jpg', 'image-4.jpg']),
+		imgurl: ko.observable()
+	};
+
+	ko.applyBindings(vm);
+	
+</script>
+</body>
+</html>
